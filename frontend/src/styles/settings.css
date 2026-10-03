@@ -1,0 +1,113 @@
+/* ---------- Configuración / tema ---------- */
+.settings-group {
+  max-width: 640px;
+  margin-top: 1rem;
+}
+.settings-hint {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0.2rem 0 1rem;
+}
+.backup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* Indicador de vida de cada URL (chequeo a demanda). */
+.url-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+.url-row a {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.health-mark {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.health-dot {
+  flex: none;
+  box-sizing: border-box;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--border);
+}
+.health-code {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+/* Cada estado se distingue por FORMA además de color: a 8px un cian y un verde son
+   el mismo punto, y encima hay gente que no los separa nunca. Lleno = respondió lo
+   que se esperaba; anillo = está vivo pero no devolvió contenido; rojo = problema. */
+.health-up { background: #16a34a; }
+.health-reachable {
+  background: transparent;
+  border: 2px solid #2563eb;
+}
+.health-error,
+.health-down { background: #dc2626; }
+.health-unknown,
+.health-pending { background: #9ca3af; }
+.url-list li .health-mark {
+  margin-right: 0.1rem;
+}
+
+/* Leyenda: sin esto, los colores hay que adivinarlos. */
+.health-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 0.1rem 0 0.9rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.health-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.theme-options,
+.workspace-switch {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.7rem;
+}
+.workspace-switch .theme-card:disabled {
+  cursor: default;
+}
+.theme-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: flex-start;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.theme-card:hover {
+  border-color: var(--accent);
+}
+.theme-card.active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.theme-card-label {
+  font-weight: 600;
+}
+.theme-card-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}

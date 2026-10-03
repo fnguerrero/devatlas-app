@@ -1,0 +1,191 @@
+/* ---------- Grid de cards ---------- */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 0.9rem;
+}
+
+.app-card {
+  /* Columna flex para que el pie de acciones se apoye abajo: si no, cada card
+     lo deja donde termine su descripción y la fila queda dispareja. */
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.15s, transform 0.15s, border-color 0.15s;
+}
+.app-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+}
+
+/* Franja del cliente: identifica de reojo sin competir con los badges. */
+.app-card.has-client {
+  position: relative;
+  overflow: hidden;
+}
+.app-card.has-client::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--client-color, var(--border-strong));
+}
+
+.app-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.app-card h3 {
+  font-size: 1.02rem;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.app-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0.4rem 0 0;
+}
+
+.stack-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.stack-icon {
+  font-size: 0.9em;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+}
+
+/* Acciones rápidas en la card */
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.22rem;
+  /* auto empuja el bloque al fondo: todas las cards de la fila cierran parejas. */
+  margin-top: auto;
+}
+/* La divisoria es un item de ancho completo: así lleva su propio margen y no
+   queda pegada a los tags cuando la card no tiene espacio de sobra. */
+.card-actions::before {
+  content: '';
+  flex: 0 0 100%;
+  margin: 0.9rem 0 0.15rem;
+  border-top: 1px solid var(--border);
+}
+
+.chip-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.68rem;
+  line-height: 1.5;
+  padding: 0.15rem 0.32rem;
+  white-space: nowrap;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text-muted);
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.chip-action:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.app-row-icon {
+  flex: 0 0 auto;
+  padding: 0.15rem 0.4rem;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  opacity: 0.6;
+  border-radius: var(--radius-sm);
+}
+.app-row-icon:hover {
+  opacity: 1;
+  background: var(--surface-2);
+}
+
+.star {
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 1.15rem;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.15s, transform 0.15s;
+}
+.star:hover {
+  color: var(--star);
+  transform: scale(1.15);
+}
+.star-on {
+  color: var(--star);
+}
+
+.is-archived {
+  opacity: 0.55;
+}
+
+/* Servicio de un tercero: se distingue de las apps propias sin leer el detalle. */
+.external-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border: 1px dashed var(--border-strong);
+  white-space: nowrap;
+}
+
+/* Sólo ícono: cuadrado, sin el hueco que dejaría el texto ausente. */
+.chip-repo {
+  padding: 0.15rem 0.28rem;
+}
+/* El punto del ambiente, más chico: son cuatro por card. */
+.card-actions .env-dot {
+  width: 6px;
+  height: 6px;
+}
+/* El ícono sigue el line-height del texto: si no, este chip queda más bajo que
+   los de ambiente y la fila se ve despareja. */
+.chip-repo svg {
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+/* Ajuste óptico: Dev/Test/QA/Prod no tienen letras con descendente, así que el
+   bloque de texto queda ~1.4px por encima del centro del chip aunque el flex
+   diga "center". Se corrige sólo el texto: el punto de color ya está centrado. */
+.chip-text {
+  transform: translateY(0.06em);
+}

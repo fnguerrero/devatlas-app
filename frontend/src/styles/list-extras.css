@@ -1,0 +1,239 @@
+/* Agregados al listado: recientes, filtros activos, menú de card, skeletons,
+   paginación, resaltado de búsqueda y volver arriba. */
+
+/* --- Apps abiertas últimamente --- */
+
+.recent-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.9rem;
+  font-size: 0.82rem;
+}
+
+.recent-label {
+  color: var(--text-muted);
+}
+
+.recent-chip {
+  padding: 0.15rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.recent-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* --- Chips de los filtros que están puestos ahora --- */
+
+.active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.active-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.active-filter:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.active-filter.clear-all {
+  border-style: dashed;
+  background: transparent;
+}
+
+/* --- Menú "⋯" de cada card --- */
+
+.card-menu {
+  position: relative;
+  display: inline-flex;
+}
+
+.card-menu-toggle {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1;
+  padding: 0.1rem 0.3rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.card-menu-toggle:hover,
+.card-menu-toggle[aria-expanded='true'] {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.card-menu-items {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: 20;
+  min-width: 190px;
+  padding: 0.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-menu-items button {
+  text-align: left;
+  padding: 0.4rem 0.55rem;
+  border: none;
+  background: none;
+  color: var(--text);
+  font-size: 0.83rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.card-menu-items button:hover {
+  background: var(--surface-2);
+}
+
+.card-menu-items button.danger {
+  color: var(--danger);
+}
+
+.app-card-head-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+/* --- Esqueletos de carga --- */
+
+.skeleton-card {
+  pointer-events: none;
+}
+
+.skeleton-line {
+  height: 0.7rem;
+  margin-bottom: 0.55rem;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--surface-2) 25%, var(--border) 37%, var(--surface-2) 63%);
+  background-size: 400% 100%;
+  animation: skeleton-shimmer 1.4s ease infinite;
+}
+
+.skeleton-title {
+  height: 1rem;
+  width: 55%;
+}
+
+.skeleton-short {
+  width: 40%;
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-line {
+    animation: none;
+  }
+}
+
+/* --- Paginación --- */
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0 0.5rem;
+}
+
+/* --- Resaltado de la búsqueda --- */
+
+.search-hit {
+  background: var(--star);
+  color: #1f2430;
+  border-radius: 3px;
+  padding: 0 1px;
+}
+
+/* --- Volver arriba --- */
+
+.back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 30;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.05rem;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+}
+
+.back-to-top:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* --- Ayuda de atajos --- */
+
+.shortcut-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: grid;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+}
+
+.shortcut-list kbd {
+  display: inline-block;
+  min-width: 1.4rem;
+  padding: 0.1rem 0.35rem;
+  margin-right: 0.35rem;
+  border: 1px solid var(--border-strong);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  background: var(--surface-2);
+  font-family: inherit;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* El estado vacío ahora puede traer un botón, así que se apila. */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}

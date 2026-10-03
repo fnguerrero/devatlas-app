@@ -1,0 +1,219 @@
+/* ---------- Reporte de tecnologías ---------- */
+.report-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.report-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.report-table th,
+.report-table td {
+  text-align: left;
+  padding: 0.55rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.report-table th {
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  position: sticky;
+  top: 0;
+}
+.report-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.report-table tbody tr:hover {
+  background: var(--surface-2);
+}
+.env-group-body {
+  padding: 0 0.9rem;
+  display: flex;
+  flex-direction: column;
+}
+.env-part {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  word-break: break-word;
+  padding: 0.8rem 0;
+}
+.env-part + .env-part {
+  border-top: 1px solid var(--border);
+}
+.env-part-label {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+.url-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.url-row-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.url-row-item a {
+  word-break: break-all;
+}
+.row-actions {
+  display: flex;
+  gap: 0.2rem;
+  flex-shrink: 0;
+}
+.env-db {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.env-db-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.env-db .db-engine {
+  text-transform: lowercase;
+}
+.env-db .kv {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.6rem;
+  margin: 0;
+  align-items: baseline;
+}
+.env-db .kv dt {
+  color: var(--text-muted);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+.env-db .kv dd {
+  margin: 0;
+  color: var(--text);
+  word-break: break-all;
+}
+.env-db code {
+  background: var(--surface-2);
+  padding: 0.05rem 0.35rem;
+  border-radius: 4px;
+}
+.db-engine {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.db-card-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 0.3rem;
+}
+.db-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.db-fields strong {
+  color: var(--text);
+  font-weight: 600;
+}
+.db-fields code {
+  background: var(--surface-2);
+  padding: 0.05rem 0.35rem;
+  border-radius: 4px;
+}
+.db-muted {
+  color: var(--text-muted);
+  font-style: italic;
+}
+.btn-link {
+  border: none;
+  background: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0 0.3rem;
+}
+.btn-eye {
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0 0.2rem;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.15s;
+}
+.btn-eye:hover {
+  color: var(--accent);
+}
+.db-form {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-top: 0.8rem;
+}
+.db-form h3 {
+  margin: 0 0 0.8rem;
+  font-size: 1rem;
+}
+.db-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.7rem;
+}
+.db-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.db-form input,
+.db-form select {
+  padding: 0.45rem 0.6rem;
+}
+.db-note {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0.8rem 0 0.5rem;
+}
+.db-form-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.env-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.35rem;
+  vertical-align: middle;
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DevAtlas">
+  <!-- Capas apiladas: el catálogo visto de canto. Formas gruesas para que se
+       siga leyendo a 16px, y fondo sólido para que funcione en claro y oscuro. -->
+  <rect width="64" height="64" rx="14" fill="#4f46e5"/>
+  <g fill="none" stroke="#fff" stroke-width="4.5" stroke-linejoin="round">
+    <path d="M32 14 50 23 32 32 14 23z"/>
+    <path d="M14 32 32 41 50 32"/>
+    <path d="M14 41 32 50 50 41"/>
+  </g>
+</svg>

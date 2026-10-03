@@ -1,0 +1,106 @@
+/* ---------- Gestión de ambientes ---------- */
+.env-help {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  max-width: 640px;
+  margin-bottom: 1.2rem;
+}
+
+.env-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 720px;
+}
+
+.env-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.8rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.env-row input[type='color'] {
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.env-name {
+  flex: 1 1 auto;
+  padding: 0.4rem 0.6rem;
+  font-weight: 600;
+}
+
+.env-order {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.env-order input {
+  width: 3.5rem;
+  padding: 0.4rem 0.5rem;
+}
+
+.env-usage {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  min-width: 4.5rem;
+  text-align: right;
+}
+
+.env-new {
+  margin-top: 2rem;
+  max-width: 720px;
+}
+.env-new-fields {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+.env-new-fields input[type='color'] {
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.env-new-fields input[type='text'],
+.env-new-fields input:not([type]) {
+  flex: 1 1 auto;
+  padding: 0.5rem 0.7rem;
+}
+
+/* Badge de capa (frontend / backend / fullstack / mobile). */
+.layer-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* Interruptor de cliente oculto: se guarda solo, sin pasar por "Guardar". */
+.client-hide {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+}

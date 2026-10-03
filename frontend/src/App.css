@@ -1,0 +1,24 @@
+/* Índice de estilos. Cada bloque vive en styles/ y se importa en el mismo
+   orden en que estaba en este archivo: en CSS el orden define qué gana. */
+
+@import './styles/base.css';
+@import './styles/buttons.css';
+@import './styles/search.css';
+@import './styles/stats.css';
+@import './styles/tags.css';
+@import './styles/toolbar.css';
+@import './styles/cards.css';
+@import './styles/list-view.css';
+@import './styles/list-extras.css';
+@import './styles/detail.css';
+@import './styles/form.css';
+@import './styles/environments-section.css';
+@import './styles/settings.css';
+@import './styles/report.css';
+@import './styles/environments-manager.css';
+@import './styles/toasts.css';
+@import './styles/confirm-dialog.css';
+@import './styles/palette.css';
+@import './styles/compact.css';
+/* Va último: sus media queries tienen que poder pisar lo de arriba. */
+@import './styles/responsive.css';

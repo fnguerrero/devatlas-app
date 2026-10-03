@@ -1,0 +1,141 @@
+/* ---------- Modo compacto ----------
+   Son pocas aplicaciones: comprimiendo cabecera y cards entran todas en una
+   pantalla, sin scroll. La clave es que nada envuelva a dos líneas: con cada
+   bloque en una sola línea, todas las cards miden exactamente lo mismo. */
+
+/* Sólo de 901px para arriba: en pantallas chicas manda el responsive (una sola
+   columna), donde comprimir no ayuda y el "nada envuelve" cortaría texto. */
+@media (min-width: 901px) {
+  /* Con las cards más angostas sobra ancho: se aprovecha para sumar columnas. */
+  .page.compact {
+    max-width: 1560px;
+    padding-top: 1.1rem;
+    padding-bottom: 1.5rem;
+  }
+
+  /* Cabecera: los bloques de referencia ceden alto, no desaparecen. */
+  .page.compact .page-header {
+    margin-bottom: 0.7rem;
+  }
+  .page.compact .page-header h1 {
+    font-size: 1.5rem;
+  }
+  .page.compact .stats-bar {
+    padding: 0.35rem 0.7rem;
+    margin-bottom: 0.45rem;
+  }
+  .page.compact .recent-bar {
+    margin-bottom: 0.45rem;
+  }
+  .page.compact .search-row {
+    margin-bottom: 0.45rem;
+  }
+  .page.compact .list-toolbar {
+    margin-bottom: 0.55rem;
+  }
+
+  .page.compact .app-group + .app-group {
+    margin-top: 0.8rem;
+  }
+  .page.compact .app-group-title {
+    margin-bottom: 0.4rem;
+  }
+
+  /* ---------- Grid y cards ---------- */
+  .page.compact .app-grid {
+    grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
+    gap: 0.6rem;
+  }
+
+  .page.compact .app-card {
+    padding: 0.65rem 0.75rem;
+  }
+
+  /* Nombre en una línea: "Portal de clientes (back)" ocupaba dos y desalineaba
+     todo lo de abajo respecto de las cards de nombre corto. */
+  .page.compact .app-card h3 {
+    font-size: 0.95rem;
+    margin: 0 0 0.35rem;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .page.compact .client-label {
+    margin-bottom: 0.15rem;
+  }
+  .page.compact .star {
+    font-size: 1rem;
+  }
+
+  /* Capa + stack, también en una sola línea: el stack largo se recorta. */
+  .page.compact .badge-row {
+    flex-wrap: nowrap;
+    gap: 0.3rem;
+    min-width: 0;
+    overflow: hidden;
+  }
+  .page.compact .badge-row > * {
+    flex: 0 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .page.compact .layer-badge,
+  .page.compact .external-badge {
+    flex-shrink: 0;
+  }
+  .page.compact .stack-badge,
+  .page.compact .layer-badge,
+  .page.compact .external-badge {
+    font-size: 0.68rem;
+    padding: 0.1rem 0.4rem;
+  }
+
+  /* La descripción se queda, pero en una sola línea: alcanza para reconocer la
+     app y no descuadra las cards. Los tags sí se van: ya se filtra por ellos
+     desde arriba y son la fila que más alto costaba. */
+  .page.compact .app-card p {
+    font-size: 0.8rem;
+    margin-top: 0.35rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .page.compact .tag-list {
+    display: none;
+  }
+
+  /* Los ambientes, en un solo renglón: el wrap de "Prod" a una segunda línea era
+     lo que hacía altas y disparejas a las cards. */
+  .page.compact .card-actions {
+    flex-wrap: nowrap;
+    overflow: hidden;
+    gap: 0.16rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .page.compact .card-actions::before {
+    content: none;
+  }
+  .page.compact .chip-action {
+    font-size: 0.66rem;
+    padding: 0.12rem 0.3rem;
+    gap: 0.2rem;
+    flex: 0 0 auto;
+  }
+  .page.compact .chip-repo {
+    padding: 0.12rem 0.26rem;
+  }
+  .page.compact .chip-repo svg {
+    width: 1.25em;
+    height: 1.25em;
+  }
+
+  /* Las que no tienen repo ni URLs igualan al resto de la fila. */
+  .page.compact .app-card {
+    min-height: 7.6rem;
+  }
+}

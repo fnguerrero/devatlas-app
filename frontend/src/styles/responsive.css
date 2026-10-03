@@ -1,0 +1,122 @@
+/* Pantallas chicas. DevAtlas se usa sobre todo en escritorio, pero consultar una URL
+   de Prod desde el celular es un caso real: lo que importa es que nada quede cortado
+   ni tape al resto. */
+
+@media (max-width: 900px) {
+  .page {
+    padding: 1.25rem 1rem 3.5rem;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-actions {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  /* La navegación se achica a íconos: los textos no entran y se apilan feo. */
+  .header-actions .btn-secondary,
+  .header-actions .btn-primary {
+    font-size: 0.82rem;
+    padding: 0.35rem 0.6rem;
+  }
+
+  .app-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-bar {
+    flex-wrap: wrap;
+    gap: 0.4rem 0.9rem;
+    font-size: 0.8rem;
+  }
+
+  .stats-bar-stacks {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .search-row {
+    flex-wrap: wrap;
+  }
+
+  .search-input {
+    flex: 1 1 100%;
+    order: -1;
+  }
+
+  .list-toolbar {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  /* Los chips de filtros scrollean en horizontal en vez de ocupar media pantalla. */
+  .tag-filter,
+  .client-filter {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+    scrollbar-width: thin;
+  }
+
+  .tag-filter > *,
+  .client-filter > * {
+    flex: 0 0 auto;
+  }
+
+  /* La fila de la vista lista se apila: en 360px no entran cinco columnas. */
+  .app-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-areas:
+      'star name repo menu'
+      '. stack stack stack'
+      '. tags tags tags';
+    gap: 0.25rem 0.5rem;
+  }
+
+  .app-row .star {
+    grid-area: star;
+  }
+  .app-row-name {
+    grid-area: name;
+  }
+  .app-row-stack {
+    grid-area: stack;
+    font-size: 0.78rem;
+  }
+  .app-row-tags {
+    grid-area: tags;
+  }
+
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .url-row {
+    flex-wrap: wrap;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .palette-backdrop {
+    padding-top: 6vh;
+  }
+
+  .back-to-top {
+    right: 0.75rem;
+    bottom: 0.75rem;
+  }
+}

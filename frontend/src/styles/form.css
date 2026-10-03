@@ -1,0 +1,431 @@
+/* ---------- Formulario ---------- */
+.app-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 640px;
+}
+
+.app-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.app-form input,
+.app-form textarea,
+.app-form select {
+  box-sizing: border-box;
+  padding: 0.55rem 0.7rem;
+  font: inherit;
+}
+
+/* Altura fija para los campos de una línea: el select no respeta line-height
+   (los navegadores lo ignoran ahí), así que igualarlos por padding no alcanza. */
+.app-form input:not([type='checkbox']):not([type='radio']):not([type='color']),
+.app-form select {
+  height: 2.4rem;
+}
+
+.app-form fieldset {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+.app-form legend {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding: 0 0.4rem;
+}
+
+.url-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.url-row input {
+  padding: 0.5rem 0.7rem;
+}
+.url-row input:first-child {
+  flex: 0 0 32%;
+}
+.url-row input:nth-child(2) {
+  flex: 1 1 auto;
+}
+
+.btn-icon {
+  flex: 0 0 auto;
+  width: 2rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-muted);
+}
+.btn-icon:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.form-flags {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0.25rem 0;
+}
+.flag-check {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.form-actions {
+  margin-top: 0.5rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+/* Configuración y sesión cierran la fila, separadas de la navegación. */
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: 0.35rem;
+  padding-left: 0.7rem;
+  border-left: 1px solid var(--border);
+}
+/* Botón que es sólo icono: cuadrado, no rectángulo con hueco al costado. */
+.btn-icon-only {
+  padding: 0.5rem;
+  aspect-ratio: 1;
+  justify-content: center;
+}
+
+/* Cuenta / login */
+.account {
+  position: relative;
+}
+.account-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.account-btn:hover {
+  border-color: var(--accent);
+}
+.account-avatar {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+}
+.account-avatar-fallback {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.account-who {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.1rem 0.3rem 0;
+}
+.account-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.4rem);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 0.6rem;
+  min-width: 18rem;
+  z-index: 20;
+}
+.account-email {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 0.2rem 0.3rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.4rem;
+  overflow-wrap: anywhere;
+}
+.account-logout {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: none;
+  color: var(--danger);
+  cursor: pointer;
+  padding: 0.4rem 0.3rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+}
+.account-logout:hover {
+  background: var(--surface-2);
+}
+.google-btn {
+  display: inline-flex;
+}
+
+/* Landing / bienvenida */
+.landing {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.landing-card {
+  max-width: 440px;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  padding: 2.5rem 2rem;
+}
+.landing-title {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+.landing-sub {
+  color: var(--text-muted);
+  margin: 0 0 1.6rem;
+}
+.landing-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+.landing-demo {
+  width: 100%;
+  justify-content: center;
+}
+.landing-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 1.4rem;
+}
+
+/* Banner de modo demo */
+.demo-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: var(--accent-soft);
+  color: var(--text);
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.demo-banner button {
+  border: 1px solid var(--accent);
+  background: var(--surface);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+/* Filtro por cliente */
+.client-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.1rem;
+}
+.client-filter-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-right: 0.2rem;
+}
+.client-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text);
+}
+.client-chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.client-count {
+  opacity: 0.7;
+  font-size: 0.72rem;
+}
+
+/* Pill de cliente en la card/detalle */
+/* El cliente ya no es una píldora: era la cuarta forma redondeada de la card y
+   se confundía con los tags y con el badge de capa. Ahora el color va en una
+   franja lateral y el nombre queda como rótulo, sin fondo. */
+.client-label {
+  align-self: flex-start;
+  max-width: 100%;
+  margin-bottom: 0.45rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  /* Gris en vez del color del cliente: contra el fondo de la card, varios colores
+     de la paleta quedaban en 3.9:1, por debajo del mínimo legible. El color sigue
+     identificando al cliente desde la franja lateral, que no necesita contraste
+     de texto. */
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* La píldora vieja sigue viva en el detalle de la aplicación. */
+.client-pill {
+  display: inline-block;
+  align-self: flex-start;
+  max-width: 100%;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.status-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid;
+}
+
+.form-inline {
+  display: flex;
+  gap: 1rem;
+}
+.form-inline > label {
+  flex: 1 1 0;
+}
+.form-inline select {
+  padding: 0.55rem 0.7rem;
+}
+
+/* Lo primero que se elige al dar de alta: define qué campos tienen sentido después. */
+.origin-picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.7rem;
+  margin: 0 0 0.3rem;
+  padding: 0;
+  border: none;
+}
+.origin-picker legend {
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.origin-picker label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.origin-picker label:hover {
+  border-color: var(--accent);
+}
+.origin-picker label.active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+/* El radio se oculta: la tarjeta entera es el control, pero sigue navegable por teclado. */
+.origin-picker input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.origin-picker label:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.origin-title {
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+.origin-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Campo con un botón al lado (alta de cliente al vuelo). */
+.field-with-action {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+.field-with-action input {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Mensaje de error al lado del campo que lo produjo. */
+.field-error {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--danger);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.app-form input[aria-invalid='true'] {
+  border-color: var(--danger);
+}
+
+.url-row-group {
+  margin-bottom: 0.5rem;
+}

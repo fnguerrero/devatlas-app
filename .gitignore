@@ -1,0 +1,18 @@
+bin/
+obj/
+node_modules/
+dist/
+*.db
+*.db-shm
+*.db-wal
+.vs/
+
+# Key ring de Data Protection: descifra las passwords guardadas. Nunca al repo.
+keys/
+
+# Export del catálogo: lleva las passwords de conexión (cifradas) y hosts reales.
+devatlas-backup-*.json
+
+# Config local de Claude Code y registro de trabajo: no van al repo
+.claude/
+.nonstop/

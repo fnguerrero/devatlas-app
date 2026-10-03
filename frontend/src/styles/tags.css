@@ -1,0 +1,31 @@
+/* ---------- Filtro de tags ---------- */
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  font-weight: 500;
+}
+
+.tag-filter .tag {
+  border: 1px solid transparent;
+  cursor: pointer;
+  background: var(--surface-2);
+  color: var(--text-muted);
+}
+.tag-filter .tag:hover {
+  border-color: var(--border-strong);
+}
+.tag-filter .tag-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}

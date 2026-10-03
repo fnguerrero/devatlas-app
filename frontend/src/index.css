@@ -1,0 +1,127 @@
+:root {
+  /* Paleta base (tema claro) */
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --surface-2: #f0f2f5;
+  --border: #e2e5ea;
+  --border-strong: #cfd4dc;
+  --text: #1f2430;
+  --text-muted: #6b7280;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --accent-soft: #eef2ff;
+  --danger: #dc2626;
+  --star: #f5b301;
+  --tag-bg: #eef2ff;
+  --tag-text: #4338ca;
+
+  --radius: 10px;
+  --radius-sm: 7px;
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06), 0 1px 3px rgba(16, 24, 40, 0.08);
+  --shadow-md: 0 4px 12px rgba(16, 24, 40, 0.1);
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color-scheme: light dark;
+  color: var(--text);
+  background-color: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Paleta oscura, reutilizada por el modo automático (SO) y el manual (data-theme="dark"). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: #14161c;
+    --surface: #1c1f27;
+    --surface-2: #232732;
+    --border: #2c313d;
+    --border-strong: #3a4150;
+    --text: #e7eaf0;
+    --text-muted: #9aa2b1;
+    --accent: #7c83ff;
+    --accent-hover: #969cff;
+    --accent-soft: #23273a;
+    --danger: #f87171;
+    --star: #f5c518;
+    --tag-bg: #23273a;
+    --tag-text: #c3c8ff;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #14161c;
+  --surface: #1c1f27;
+  --surface-2: #232732;
+  --border: #2c313d;
+  --border-strong: #3a4150;
+  --text: #e7eaf0;
+  --text-muted: #9aa2b1;
+  --accent: #7c83ff;
+  --accent-hover: #969cff;
+  --accent-soft: #23273a;
+  --danger: #f87171;
+  --star: #f5c518;
+  --tag-bg: #23273a;
+  --tag-text: #c3c8ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+h1 {
+  font-size: 1.9rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+button {
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: 0.92rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}

@@ -1,0 +1,136 @@
+/* ---------- Toolbar de la lista ---------- */
+.list-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.1rem;
+}
+
+.toolbar-field,
+.toolbar-check {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.toolbar-check {
+  cursor: pointer;
+}
+
+.toolbar-field select {
+  padding: 0.35rem 0.5rem;
+}
+
+.view-toggle {
+  margin-left: auto;
+  display: flex;
+  gap: 0.25rem;
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+  padding: 0.2rem;
+}
+
+.view-toggle button {
+  padding: 0.35rem 0.7rem;
+  font-size: 0.82rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-muted);
+}
+.view-toggle button.active {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- Cabecera compacta ---------- */
+/* El resumen no es el contenido de la página: va en una línea, no en tarjetas. */
+.stats-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 1.1rem;
+  padding: 0.55rem 0.85rem;
+  margin-bottom: 0.8rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.stats-bar b {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.stats-bar-stacks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-left: auto;
+}
+
+.search-row {
+  display: flex;
+  gap: 0.6rem;
+  align-items: stretch;
+  margin-bottom: 0.8rem;
+}
+.search-row .search-input {
+  margin-bottom: 0;
+}
+.filters-toggle {
+  white-space: nowrap;
+}
+.filters-toggle.has-filters {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 0.9rem;
+}
+.filters-closed {
+  display: none;
+}
+.filters .tag-filter,
+.filters .client-filter {
+  margin-bottom: 0;
+}
+
+/* ---------- Grupos del listado ---------- */
+.app-group + .app-group {
+  margin-top: 1.6rem;
+}
+.app-group-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.7rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+.app-group-count {
+  padding: 0.05rem 0.45rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-size: 0.75rem;
+  letter-spacing: normal;
+}
+
+/* Densidad: viaja con el selector de vista, a la derecha de la toolbar. */
+.density-toggle {
+  margin-left: auto;
+  white-space: nowrap;
+}
+.density-toggle + .view-toggle {
+  margin-left: 0;
+}
