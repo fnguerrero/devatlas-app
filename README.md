@@ -1,5 +1,7 @@
 # DevAtlas
 
+[![tests](https://github.com/fnguerrero/devatlas-app/actions/workflows/tests.yml/badge.svg)](https://github.com/fnguerrero/devatlas-app/actions/workflows/tests.yml)
+
 > **Estado: Activo** — en uso para el trabajo del día a día.
 
 Catálogo/atlas personal de aplicaciones de desarrollo. Registrás cada app con su
